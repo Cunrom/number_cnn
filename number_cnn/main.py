@@ -33,8 +33,8 @@ filepath = './saved_model'
 model = load_model(filepath, compile=True)
 model.fit(x_train, y_train, batch_size=160, epochs=100, verbose=1)
 save_model(model, filepath)
-# print("Test Result:")
-# model.evaluate(x_test, y_test, batch_size=100, verbose=1)
+print("Test Result:")
+model.evaluate(x_test, y_test, batch_size=100, verbose=1)
 
 prediction = model.predict(img_tensor)
 number_prediction = np.argmax(prediction)
